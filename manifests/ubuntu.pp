@@ -23,7 +23,13 @@
 # Copyright 2012 Neo Technology Inc.
 #
 class neo4j::ubuntu {
-  exec {
+  include linux
+
+  class {
+    'neo4j::java': i_accept_the_oracle_license_agreement => true
+  }
+
+exec {
     'apt-get update':
       command => '/usr/bin/apt-get update';
 
@@ -42,7 +48,7 @@ class neo4j::ubuntu {
     '/etc/neo4j':
       ensure => directory,
       group  => adm,
-      mode   => '755';
+      mode   => '0755';
 
     'neo4j config file':
       path     => '/etc/neo4j/neo4j-server.properties',
@@ -54,14 +60,14 @@ class neo4j::ubuntu {
   package {
     'neo4j':
       ensure  => present,
-      require => Exec['apt-get update'];
+      require => [Exec['apt-get update'], Class['neo4j::java']];
   }
 
   service {
     'neo4j-service':
       ensure  => running,
       enable  => true,
-      require => Package['neo4j'];
+      require => [Package['neo4j'], Class['neo4j::linux']];
 
   }
 
