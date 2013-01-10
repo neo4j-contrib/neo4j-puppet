@@ -23,11 +23,12 @@
 # Copyright 2012 Neo Technology Inc.
 #
 
-class neo4j::java($i_accept_the_oracle_license_agreement = false) {
-  if ($i_accept_the_oracle_license_agreement == true) {
+class neo4j::java {
+  if ($::oracle_license_accepted == 'true') {
     notice("Proceeding with the Oracle JVM as you agree to the license agreement")
 
     exec {
+      # this should probably be DRYed
       'apt-get update for OAB dependencies':
         command => '/usr/bin/apt-get update';
 

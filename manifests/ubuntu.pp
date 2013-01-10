@@ -24,12 +24,9 @@
 #
 class neo4j::ubuntu {
   include linux
+  include java
 
-  class {
-    'neo4j::java': i_accept_the_oracle_license_agreement => true
-  }
-
-exec {
+  exec {
     'apt-get update':
       command => '/usr/bin/apt-get update';
 
@@ -54,7 +51,9 @@ exec {
       path     => '/etc/neo4j/neo4j-server.properties',
       source   => 'puppet:///modules/neo4j/neo4j-server.properties',
       require  => File['/etc/neo4j'],
-      before   => Package['neo4j'];
+      before   => Package['neo4j'],
+      owner    => neo4j,
+      group    => adm;
   }
 
   package {
