@@ -34,6 +34,11 @@ class neo4j::ubuntu {
       command => '/usr/bin/wget -O - http://debian.neo4j.org/neotechnology.gpg.key | apt-key add -',
       before  => Exec['apt-get update'],
       unless  => '/usr/bin/apt-key list | grep -q neotechnology.com';
+
+    'restart neo4j':
+      command     => '/usr/sbin/service neo4j-service restart',
+      refreshonly => true,
+      require     => [Package['neo4j'], Class['neo4j::linux']];
   }
 
   file {
@@ -42,16 +47,11 @@ class neo4j::ubuntu {
       content => 'deb http://debian.neo4j.org/repo stable/',
       before  => Exec['apt-get update'];
 
-    '/etc/neo4j':
-      ensure => directory,
-      group  => adm,
-      mode   => '0755';
-
     'neo4j config file':
       path     => '/etc/neo4j/neo4j-server.properties',
       source   => 'puppet:///modules/neo4j/neo4j-server.properties',
-      require  => File['/etc/neo4j'],
-      before   => Service['neo4j-service'],
+      require  => Package['neo4j'],
+      before   => Exec['restart neo4j'],
       owner    => neo4j,
       group    => adm;
   }
@@ -66,8 +66,7 @@ class neo4j::ubuntu {
     'neo4j-service':
       ensure  => running,
       enable  => true,
-      require => [Package['neo4j'], Class['neo4j::linux']];
-
+      require => Exec['restart neo4j'];
   }
 
 }

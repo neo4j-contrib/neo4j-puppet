@@ -40,7 +40,7 @@ class neo4j::java {
         command   => '/tmp/oab-java.sh',
         require   => [File['/tmp/oab-java.sh'], Exec['apt-get update for OAB dependencies']],
         logoutput => true,
-        timeout   => 1200, # 20 minutes.
+        timeout   => 1200, # 20 minutes, for slow Internet connections
         before    => Exec['apt-get update'],
         creates   => '/etc/apt/sources.list.d/oab.list';
 
