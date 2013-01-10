@@ -1,5 +1,5 @@
 #!/bin/bash
-apt-get update
+apt-get update -qq
 apt-get install unzip puppet -y
 wget -O neo4j-puppet.zip https://github.com/neo4j-contrib/neo4j-puppet/archive/master.zip
 unzip -o neo4j-puppet.zip

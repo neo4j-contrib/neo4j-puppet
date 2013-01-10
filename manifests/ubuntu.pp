@@ -51,7 +51,7 @@ class neo4j::ubuntu {
       path     => '/etc/neo4j/neo4j-server.properties',
       source   => 'puppet:///modules/neo4j/neo4j-server.properties',
       require  => File['/etc/neo4j'],
-      before   => Package['neo4j'],
+      before   => Service['neo4j-service'],
       owner    => neo4j,
       group    => adm;
   }
