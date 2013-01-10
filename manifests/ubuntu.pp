@@ -37,7 +37,6 @@ class neo4j::ubuntu {
 
     'restart neo4j':
       command     => '/usr/sbin/service neo4j-service restart',
-      refreshonly => true,
       require     => [Package['neo4j'], Class['neo4j::linux']];
   }
 
