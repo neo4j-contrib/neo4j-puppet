@@ -1,0 +1,94 @@
+{
+    "Description": "Neo4j on AWS - creates a stack and deploys Neo4j on it",
+    "Parameters": {
+        "AcceptOracleLicense" : {
+              "Description" : "You accept the terms of Oracle's License Agreement for Java",
+              "Type" : "String",
+              "AllowedValues": ["true", "false"],
+              "Default": "true"
+            }
+    },
+    "Resources": {
+        "ElasticIP": {
+            "Type": "AWS::EC2::EIP",
+            "Properties": {
+                "InstanceId": {
+                    "Ref": "Server"
+                }
+            }
+        },
+        "Server": {
+            "Type": "AWS::EC2::Instance",
+            "Properties": {
+                "AvailabilityZone": "us-east-1b",
+                "DisableApiTermination": "FALSE",
+                "ImageId": "ami-d726abbe",
+                "InstanceType": "m1.large",
+                "KernelId": "aki-825ea7eb",
+                "KeyName": "NEO4J",
+                "Monitoring": "false",
+                "SecurityGroups": [
+                    {
+                        "Ref": "sgNeo4jServer"
+                    }
+                ],
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "Neo4j on AWS"
+                    }
+                ],
+                "UserData"       : { "Fn::Base64" : { "Fn::Join" : ["", [
+                        "#!/bin/bash -v\n",
+                        "wget https://raw.github.com/neo4j-contrib/neo4j-puppet/master/go\n",
+                        "chmod +x go\n",
+                        "sudo ./go", { "Ref" : "AcceptOracleLicense" } , "\n"
+                      ]]}},
+                "Volumes" : [
+                          { "VolumeId" : { "Ref" : "EBSVolume" },
+                            "Device" : "/dev/sdj"
+                          }]
+
+            }
+        },
+        "EBSVolume": {
+            "Type": "AWS::EC2::Volume",
+            "Properties": {
+                "AvailabilityZone": "us-east-1b",
+                "Size": "100"
+            }
+        },
+        "sgNeo4jServer": {
+            "Type": "AWS::EC2::SecurityGroup",
+            "Properties": {
+                "GroupDescription": "Neo4j Ports",
+                "SecurityGroupIngress": [
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": "22",
+                        "ToPort": "22",
+                        "CidrIp": "0.0.0.0/0"
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": "7474",
+                        "ToPort": "7474",
+                        "CidrIp": "0.0.0.0/0"
+                    }
+                ]
+            }
+        }
+    },
+    "Outputs": {
+        "WebsiteURL" : {
+            "Value" : { "Fn::Join" : ["", ["http://", { "Fn::GetAtt" : [ "Server", "PublicIp" ]}, ":7474/db/data"]] },
+            "Description" : "Neo4j Endpoint"
+          },
+        "Note" :{
+            "Value" : "Your stack is probably still building.  It takes time to get Java built.  Coffee?",
+            "Description" : ""
+        }
+    },
+
+    "AWSTemplateFormatVersion": "2010-09-09"
+}
