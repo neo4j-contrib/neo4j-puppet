@@ -1,0 +1,17 @@
+#!/bin/bash
+LOGFILE=/backup/neo4j/backup.log
+message() {
+  message_date=$(date)
+  echo "${message_date}: $1" >> $LOGFILE
+}
+
+neo_service() {
+  service neo4j-service $1 >> $LOGFILE
+}
+
+set -e
+message "Starting cold backup."
+neo_service stop
+tar -czf /backup/neo4j/$(date +%F).tar.gz  /var/lib/neo4j/data >> $LOGFILE 2>&1
+neo_service start
+message "Completed cold backup."
