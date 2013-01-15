@@ -25,6 +25,7 @@
 class neo4j::ubuntu {
   include linux
   include java
+  include ebs
 
   exec {
     'apt-get update':

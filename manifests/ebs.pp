@@ -1,14 +1,15 @@
 # responsible for backups onto an EBS volume
 class neo4j::ebs {
-  if ($::ec_ami_id) {
+  if ($::ec2_ami_id) {
     file {
       '/tmp/fs.sh':
         mode   => '0755',
         source =>'puppet:///modules/neo4j/fs.sh';
 
       '/backup/neo4j':
-        owner   => neo4j,
-        require => [Mount['backup'], Package['neo4j']];
+        ensure  => directory,
+        owner   => root,
+        require => Mount['/backup'];
 
       '/etc/cron.daily/neo4j_backup':
         owner  => root,
@@ -24,8 +25,14 @@ class neo4j::ebs {
 
     mount {
       '/backup':
-        device => '/dev/xvdj',
-        fstype => 'ext3';
+        ensure  => mounted,
+        atboot  => true,
+        options => 'nosuid',
+        dump    => 0,
+        pass    => 2,
+        device  => '/dev/xvdj',
+        fstype  => ext3,
+        require => Exec['/tmp/fs.sh'];
     }
   }
 
