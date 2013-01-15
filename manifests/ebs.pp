@@ -24,7 +24,7 @@ class neo4j::ebs {
 
     mount {
       '/backup':
-        device => '/dev/',
+        device => '/dev/xvdj',
         fstype => 'ext3';
     }
   }
