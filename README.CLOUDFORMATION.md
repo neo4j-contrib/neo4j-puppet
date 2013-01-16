@@ -27,14 +27,14 @@ Pre-requisites
 To use this you'll need:
 
 * AWS account credentials. The account will need to have a credit card applied to it
-* An EC2 key pair, in the US-EAST zone (which is the default)
+* An [EC2 key pair](EC2_KEY.md), in the US-EAST zone (which is the default)
 * A browser
 * A username and password for your application to securely access Neo4j with
 
 Usage
 -----
 
-* Log onto [the AWS console](https://console.aws.amazon.com/cloudformation/home?region=us-east-1) with your AWS account.
+* Log onto [the AWS CloudFormation console](https://console.aws.amazon.com/cloudformation/home?region=us-east-1) with your AWS account.
 * Click 'Create Stack'
 * Fill in the 'Stack Name' field
 * Click the 'Provide a template URL' radio button
@@ -47,6 +47,11 @@ Usage
 * Refresh the CloudFormation view until your stack is complete.  Click on the stack.
 * The output tab will show you the endpoint of the Neo4j server.  Click on it, and when prompted for password, enter the password that you chose in pre-requsites.
 * Configure your application to talk to the endpoint.
+
+Decomissioning
+--------------
+
+If you're done testing your Neo4j installation, you can delete the stack from the AWS CloudFormation console.
 
 
 
