@@ -15,7 +15,7 @@ Features
 * Installs Neo4j community from stable Debian packages
 * Choose OpenJDK or Oracle JVM
 * Daily cold backup to an Amazon EBS volume (defaults to /dev/xvdj)
-* Will generate EC2 machine, EBS volume, static IP, etc. from [CloudFormation](/CLOUDFORMATION.md)
+* Will generate EC2 machine, EBS volume, static IP, etc. from [CloudFormation](CLOUDFORMATION.md)
 
 Usage
 -----
