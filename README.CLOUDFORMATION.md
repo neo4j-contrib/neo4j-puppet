@@ -27,7 +27,7 @@ Pre-requisites
 To use this you'll need:
 
 * AWS account credentials. The account will need to have a credit card applied to it
-* An [EC2 key pair](EC2_KEY.md), in the US-EAST zone (which is the default)
+* An [EC2 key pair](/neo4j-contrib/neo4j-puppet/blob/master/README.EC2_KEY.md), in the US-EAST zone (which is the default)
 * A browser
 * A username and password for your application to securely access Neo4j with
 
@@ -35,12 +35,12 @@ Usage
 -----
 
 * Log onto [the AWS CloudFormation console](https://console.aws.amazon.com/cloudformation/home?region=us-east-1) with your AWS account.
-* Click 'Create Stack'
-* Fill in the 'Stack Name' field
-* Click the 'Provide a template URL' radio button
+* Click _Create Stack_
+* Fill in the _Stack Name_ field
+* Click the _Provide a template URL_ radio button
 * Paste [this link](https://cloudformation.neo4j.org.s3.amazonaws.com/cf_template.json) into the field next to the button
 * Click the Continue button
-* Fill in the 4 parameters.  The 'SSHKeyName' parameter is the name of your SSH key.  The Oracle license is the license to use Java
+* Fill in the 4 parameters.  The _SSHKeyName_ parameter is the name of your SSH key.  The Oracle license is the license to use Java
 * Click Continue button
 * Click Continue button
 * Click Continue button. It will take time to provision the cloud servers and deploy neo4j. Be patient.

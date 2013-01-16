@@ -15,23 +15,27 @@ Features
 * Installs Neo4j community from stable Debian packages
 * Choose OpenJDK or Oracle JVM
 * Daily cold backup to an Amazon EBS volume (defaults to /dev/xvdj)
-* Will optionally generate EC2 machine, EBS volume, static IP, etc. from [CloudFormation](README.CLOUDFORMATION.md)
+* Will optionally generate EC2 machine, EBS volume, static IP, etc.
 
-Usage (for those new to Amazon EC2)
------------------------------------
+Usage
+-----
+(for those new to Amazon EC2)
 
-See the [CloudFormation notes](CLOUDFORMATION.md)
+See the [CloudFormation notes](/neo4j-contrib/neo4j-puppet/blob/master/README.CLOUDFORMATION.md)
 
 
-Advanced Usage (for people who are handy with Ubuntu and/or EC2)
----------------------------------------------------------------
+Advanced Usage
+--------------
+(for people who are comfortable with Ubuntu and/or EC2)
 
-* Aquire a fresh Ubuntu machine, virtual, cloud or metal
-* Execute a shell
+* Aquire a fresh Ubuntu machine (virtual, cloud or bare metal)
+* Run a shell on it.
 * wget https://raw.github.com/neo4j-contrib/neo4j-puppet/master/go
 * chmod +x go
 * sudo ./go true bob bob123 (accepts Oracle license, sets a username and password)
-* Visit http://<your machine's IP>:7474/db/data to see the endpoint
+* Go to the water cooler.
+* Come back.
+* Visit http://<your machine's IP>:7474/db/data to see your Neo4j endpoint.
 
 
 License

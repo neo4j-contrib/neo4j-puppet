@@ -13,8 +13,10 @@ Steps
 
 * Load the Key Pairs page of the [AWS console](https://console.aws.amazon.com/ec2/home?region=us-east-1#s=KeyPairs),
 and log in if you have to.
-* Click the 'Create Key Pair' button
-* Fill in the 'Key Pair Name button.  We suggest you call it 'NEO4J'. You should see a dialog box like this:
-[![Dialog Box](images/dialog.png)]
+* Click the _Create Key Pair_ button
+
+* Fill in the _Key Pair Name_ button.  We suggest you call it 'NEO4J'. You should see a dialog box like this:
+[![Dialog Box](https://raw.github.com/neo4j-contrib/neo4j-puppet/master/images/dialog.jpg)]
+
 * Your browser should have downloaded a file with the '.pem' extension.  *Look after that file.*  It's the only way that
 you'll be able to access your new Neo4j server later, for doing any administration.
