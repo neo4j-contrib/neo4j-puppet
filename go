@@ -9,6 +9,8 @@ uid=`id -u`
 [ $uid -eq 0 ] || die "Usage: sudo $0"
 
 [ "${1}" == "true" ] && oracle=true || oracle=false
+username=$2
+password=$3
 
 apt-get update -qq
 apt-get install unzip puppet -y
@@ -24,6 +26,8 @@ apt-get install unzip puppet -y
         echo "********************************************************************************"
         export I_ACCEPT_THE_ORACLE_LICENSE=true
     fi
+    export NEO4J_USERNAME=$2
+    export NEO4J_PASSWORD=$3
 
     puppet apply neo4j/tests/init.pp --modulepath . | tee /var/tmp/puppet.log
 )

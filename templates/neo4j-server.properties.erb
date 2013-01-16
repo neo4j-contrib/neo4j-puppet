@@ -83,3 +83,9 @@ org.neo4j.server.http.log.enabled=true
 # Note: changing the rollover and retention policy is sensible, but changing the
 # output format is less so, since it is configured to use the ubiquitous common log format
 org.neo4j.server.http.log.config=conf/neo4j-http-logging.xml
+
+#*****************************************************************
+# Authentication extension configuration
+#*****************************************************************
+org.neo4j.server.credentials=<%= neo4j_username %>:<%= neo4j_password %>
+org.neo4j.server.thirdparty_jaxrs_classes=org.neo4j.server.extension.auth=/auth

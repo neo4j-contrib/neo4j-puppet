@@ -6,7 +6,17 @@
               "Type" : "String",
               "AllowedValues": ["true", "false"],
               "Default": "true"
-            }
+            },
+        "Neo4jUserName": {
+            "Description" : "Username for the Neo4j REST API",
+            "Type" : "String"
+        },
+
+        "Neo4jPassword": {
+            "Description" : "Username for the Neo4j REST API",
+             "Type" : "String",
+             "NoEcho": "True"
+        }
     },
     "Resources": {
         "ElasticIP": {
@@ -42,7 +52,7 @@
                         "#!/bin/bash -v\n",
                         "wget -O /var/tmp/go https://raw.github.com/neo4j-contrib/neo4j-puppet/master/go\n",
                         "chmod +x /var/tmp/go\n",
-                        "sudo /var/tmp/go ", { "Ref" : "AcceptOracleLicense" } , "\n"
+                        "sudo /var/tmp/go ", { "Ref" : "AcceptOracleLicense" } , " ", {"Ref": "Neo4jUserName"}, " ", {"Ref": "Neo4jPassword"}, "\n"
                       ]]}},
                 "Volumes" : [
                           { "VolumeId" : { "Ref" : "EBSVolume" },
