@@ -1,4 +1,4 @@
-Neo CloudFormation Template
+Neo4j CloudFormation Template
 ===========================
 
 About
@@ -50,7 +50,7 @@ Usage
 
 ![Completed Stack](https://raw.github.com/neo4j-contrib/neo4j-puppet/master/images/complete_stack.jpg)
 
-* After the stack is created it will take a little extra time to deploy Java and Neo4j.
+* After the stack is created it will take 5-10 minutes to deploy Java and Neo4j.
 * The _Output_ tab will show you the endpoint of the Neo4j server (see below).  Click on it, and when prompted for password, enter the password that you chose in pre-requsites.
 
 ![Stack Output](https://raw.github.com/neo4j-contrib/neo4j-puppet/master/images/output.jpg)
@@ -61,6 +61,15 @@ Decomissioning
 --------------
 
 If you're done testing your Neo4j installation, you can delete the stack from the AWS CloudFormation console.
+
+Troubleshooting
+---------------
+
+Using the EC2 SSH key that you kept earlier, you can SSH onto the machine:
+
+`ssh -i NEO4J.pem ubuntu@<the IP address from the output>`
+
+The Puppet tool under the hood will log to *var/tmp/puppet.log*
 
 
 
