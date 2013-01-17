@@ -1,3 +1,9 @@
+This file is maintained in Puppet. Manual changes may be overwritten.
+
+
+
+
+
 ################################################################
 # Neo4j configuration
 #
@@ -87,5 +93,5 @@ org.neo4j.server.http.log.config=conf/neo4j-http-logging.xml
 #*****************************************************************
 # Authentication extension configuration
 #*****************************************************************
-org.neo4j.server.credentials=<%= neo4j_username %>:<%= neo4j_password %>
+org.neo4j.server.credentials=<%= neo4j_username  %>:<%= neo4j_password %>
 org.neo4j.server.thirdparty_jaxrs_classes=org.neo4j.server.extension.auth=/auth

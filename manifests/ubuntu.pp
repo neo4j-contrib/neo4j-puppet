@@ -39,7 +39,23 @@ class neo4j::ubuntu {
 
     'restart neo4j':
       command     => '/usr/sbin/service neo4j-service restart',
-      require     => [Package['neo4j'], Class['neo4j::linux'], File['neo4j config file'], File['neo4j auth extension link']];
+      require     => [Package['neo4j'],
+                      Class['neo4j::linux'],
+                      File['neo4j config file'],
+                      File['neo4j auth extension link'],
+                      Exec['bump the minimum heap size'],
+                      Exec['bump the maximum heap size'],
+      ];
+
+    'bump the minimum heap size':
+      command     => '/bin/echo "wrapper.java.initmemory=1024" >> /etc/neo4j/neo4j-wrapper.conf',
+      require     => Package['neo4j'],
+      unless      => '/bin/grep -q "^wrapper.java.initmemory"';
+
+    'bump the maximum heap size':
+      command     => '/bin/echo "wrapper.java.maxmemory=4096" >> /etc/neo4j/neo4j-wrapper.conf',
+      require     => Package['neo4j'],
+      unless      => '/bin/grep -q "^wrapper.java.maxmemory"';
   }
 
   file {

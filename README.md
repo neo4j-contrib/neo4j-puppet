@@ -32,10 +32,8 @@ Advanced Usage
 *Run a shell on it, and apply the commands below (you can paste them directly in)
 
 `wget https://raw.github.com/neo4j-contrib/neo4j-puppet/master/go`
-
 `chmod +x go`
-
-`sudo ./go true bob bob123 (accepts Oracle license, sets a username and password)`
+`sudo ./go true bob bob123 #accepts Oracle license, sets a username and password`
 
 * Go to the water cooler.
 * Come back.
