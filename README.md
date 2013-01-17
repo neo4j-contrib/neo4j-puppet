@@ -21,7 +21,7 @@ Usage
 -----
 (for those new to Amazon EC2)
 
-See the [CloudFormation notes](/neo4j-contrib/neo4j-puppet/blob/master/README.CLOUDFORMATION.md)
+See the [CloudFormation notes](https://raw.github.com/neo4j-contrib/neo4j-puppet/blob/master/README.CLOUDFORMATION.md)
 
 
 Advanced Usage

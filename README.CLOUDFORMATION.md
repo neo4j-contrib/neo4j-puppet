@@ -27,7 +27,7 @@ Pre-requisites
 To use this you'll need:
 
 * AWS account credentials. The account will need to have a credit card applied to it
-* An [EC2 key pair](/neo4j-contrib/neo4j-puppet/blob/master/README.EC2_KEY.md), in the US-EAST zone (which is the default)
+* An [EC2 key pair](https://raw.github.com/neo4j-contrib/neo4j-puppet/blob/master/README.EC2_KEY.md), in the US-EAST zone (which is the default)
 * A browser
 * A username and password for your application to securely access Neo4j with
 
