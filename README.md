@@ -29,10 +29,14 @@ Advanced Usage
 (for people who are comfortable with Ubuntu and/or EC2)
 
 * Aquire a fresh Ubuntu machine (virtual, cloud or bare metal)
-* Run a shell on it.
-* wget https://raw.github.com/neo4j-contrib/neo4j-puppet/master/go
-* chmod +x go
-* sudo ./go true bob bob123 (accepts Oracle license, sets a username and password)
+*Run a shell on it, and apply the commands below (you can paste them directly in)
+
+`wget https://raw.github.com/neo4j-contrib/neo4j-puppet/master/go`
+
+`chmod +x go`
+
+`sudo ./go true bob bob123 (accepts Oracle license, sets a username and password)`
+
 * Go to the water cooler.
 * Come back.
 * Visit http://<your machine's IP>:7474/db/data to see your Neo4j endpoint.
