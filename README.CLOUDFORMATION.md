@@ -1,5 +1,5 @@
 Neo4j CloudFormation Template
-===========================
+=============================
 
 About
 -----
@@ -11,14 +11,14 @@ without in-depth experience of Linux servers, AWS, or installing databases like 
 Cost
 ----
 
-If you use tool, you'll be creating a "stack" of the following on Amazon AWS:
+If you use this tool, you'll be creating a "stack" of the following on Amazon AWS:
 
 * One m1.large server
 * One Elastic IP address
 * 100 GB of EBS storage
 * One security group
 
-This will be charged to your credit card on an hourly basis, from when you start the stack, until you stop the stack.
+Amazon will charge the cost for all this to your credit card on an hourly basis, from when you start the stack, until you stop the stack.
 Please look up the [pricing calculator](http://calculator.s3.amazonaws.com/calc5.html) if you're concerned about
 the hosting cost.
 
@@ -51,7 +51,7 @@ Usage
 ![Completed Stack](https://raw.github.com/neo4j-contrib/neo4j-puppet/master/images/complete_stack.jpg)
 
 * After the stack is created it will take 5-10 minutes to deploy Java and Neo4j.
-* The _Output_ tab will show you the endpoint of the Neo4j server (see below).  Click on it, and when prompted for password, enter the password that you chose in pre-requsites.
+* The _Output_ tab will show you the endpoint of the Neo4j server (see below).  Click on it, and when prompted for password, enter the password that you chose in pre-requisites.
 
 ![Stack Output](https://raw.github.com/neo4j-contrib/neo4j-puppet/master/images/output.jpg)
 
@@ -60,7 +60,7 @@ Usage
 Decomissioning
 --------------
 
-If you're done testing your Neo4j installation, you can delete the stack from the AWS CloudFormation console.
+If you're done using your Neo4j installation, you can delete the stack from the AWS CloudFormation console.
 
 Troubleshooting
 ---------------
@@ -70,10 +70,4 @@ Using the EC2 SSH key that you kept earlier, you can SSH onto the machine:
 `ssh -i NEO4J.pem ubuntu@<the IP address from the output>`
 
 The Puppet tool under the hood will log to *var/tmp/puppet.log*
-
-
-
-
-
-
 
