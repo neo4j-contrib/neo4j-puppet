@@ -4,29 +4,30 @@ Neo CloudFormation Template
 About
 -----
 
-This template creates a complete Neo4j installation, including Amazon AWS server, fixed IP address and backup storage.
-It's intended to help application developers get up and running quickly with Neo4j, without a great understanding of
-servers, AWS, or installing databases like Neo4j.
+This template creates a complete Neo4j installation, including [Amazon AWS](http://aws.amazon.com/) server, fixed IP
+address and backup storage.  It's intended to help application developers get up and running quickly with Neo4j,
+without in-depth experience of Linux servers, AWS, or installing databases like Neo4j.
 
 Cost
 ----
 
-If you use this, you'll be using the following on Amazon AWS:
+If you use tool, you'll be creating a "stack" of the following on Amazon AWS:
 
 * One m1.large server
 * One Elastic IP address
 * 100 GB of EBS storage
 * One security group
 
-This will be charged to your credit card on an hourly basis. Please look up the
-[pricing calculator](http://calculator.s3.amazonaws.com/calc5.html) if you're concerned about the hosting cost.
+This will be charged to your credit card on an hourly basis, from when you start the stack, until you stop the stack.
+Please look up the [pricing calculator](http://calculator.s3.amazonaws.com/calc5.html) if you're concerned about
+the hosting cost.
 
 Pre-requisites
 --------------
 
-To use this you'll need:
+To use this tool you'll need:
 
-* AWS account credentials. The account will need to have a credit card applied to it
+* An AWS account, with credentials, and credit card on file
 * An [EC2 key pair](https://raw.github.com/neo4j-contrib/neo4j-puppet/blob/master/README.EC2_KEY.md), in the US-EAST zone (which is the default)
 * A browser
 * A username and password for your application to securely access Neo4j with
