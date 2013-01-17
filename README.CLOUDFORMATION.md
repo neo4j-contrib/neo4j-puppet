@@ -28,7 +28,7 @@ Pre-requisites
 To use this tool you'll need:
 
 * An AWS account, with credentials, and credit card on file
-* An [EC2 key pair](https://raw.github.com/neo4j-contrib/neo4j-puppet/blob/master/README.EC2_KEY.md), in the US-EAST zone (which is the default)
+* An [EC2 key pair](https://github.com/neo4j-contrib/neo4j-puppet/blob/master/README.EC2_KEY.md), in the US-EAST zone (which is the default)
 * A browser
 * A username and password for your application to securely access Neo4j with
 
@@ -41,7 +41,7 @@ Usage
 * Click the _Provide a template URL_ radio button
 * Paste [this link](https://cloudformation.neo4j.org.s3.amazonaws.com/cf_template.json) into the field next to the button
 * Click the _Continue_ button
-* Fill in the 4 parameters.  The _SSHKeyName_ parameter is the name of your EC2 Key pair (we suggested NEO4).  The Oracle license is the license to use Java
+* Fill in the 4 parameters.  The _SSHKeyName_ parameter is the name of your EC2 Key pair (we suggested NEO4J).  The Oracle license is the license to use Java
 * Click _Continue_ button
 * You can optionally add tags to help identify your stacks.  Click _Continue_ button.
 * You may review your options here.  Click _Continue_ button.
