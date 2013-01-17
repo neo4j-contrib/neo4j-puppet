@@ -37,7 +37,7 @@ Advanced Usage
 
 * Go to the water cooler.
 * Come back.
-* Visit http://<your machine's IP>:7474/db/data to see your Neo4j endpoint.
+* Visit http://your machine's IP:7474/db/data to see your Neo4j endpoint.
 
 
 License
@@ -51,3 +51,12 @@ Support
 -------
 
 Please log tickets and issues at the [Github project](https://github.com/neo4j-contrib/neo4j-puppet).
+
+Acknowledgements
+----------------
+
+Thanks to:
+
+* [Jussi Heinonen](https://github.com/jussiheinonen) for inspiration
+
+* [Hendy Irawan](http://www.hendyirawan.com/) for letting us pinch some code
