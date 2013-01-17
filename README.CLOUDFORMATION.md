@@ -39,13 +39,21 @@ Usage
 * Fill in the _Stack Name_ field (whatever name you'd like)
 * Click the _Provide a template URL_ radio button
 * Paste [this link](https://cloudformation.neo4j.org.s3.amazonaws.com/cf_template.json) into the field next to the button
-* Click the Continue button
-* Fill in the 4 parameters.  The _SSHKeyName_ parameter is the name of your SSH key.  The Oracle license is the license to use Java
-* Click Continue button
-* Click Continue button
-* Click Continue button. It will take time to provision the cloud servers and deploy neo4j. Be patient.
-* Refresh the CloudFormation view until your stack is complete.  Click on the stack.
-* The output tab will show you the endpoint of the Neo4j server.  Click on it, and when prompted for password, enter the password that you chose in pre-requsites.
+* Click the _Continue_ button
+* Fill in the 4 parameters.  The _SSHKeyName_ parameter is the name of your EC2 Key pair (we suggested NEO4).  The Oracle license is the license to use Java
+* Click _Continue_ button
+* You can optionally add tags to help identify your stacks.  Click _Continue_ button.
+* You may review your options here.  Click _Continue_ button.
+* Your stack is now being created.  Click the _Close_ button.
+* Click the _Refresh_ button on the top right hand side of the CloudFormation view until your stack is complete.  You should see the image below:
+
+![Completed Stack](https://raw.github.com/neo4j-contrib/neo4j-puppet/master/images/complete_stack.jpg)
+
+* After the stack is created it will take a little extra time to deploy Java and Neo4j.
+* The _Output_ tab will show you the endpoint of the Neo4j server (see below).  Click on it, and when prompted for password, enter the password that you chose in pre-requsites.
+
+![Stack Output](https://raw.github.com/neo4j-contrib/neo4j-puppet/master/images/output.jpg)
+
 * Configure your application to talk to the endpoint.
 
 Decomissioning

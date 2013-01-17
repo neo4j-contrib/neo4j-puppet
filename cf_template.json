@@ -13,13 +13,14 @@
         },
 
         "Neo4jPassword": {
-            "Description" : "Username for the Neo4j REST API",
+            "Description" : "Password for the Neo4j REST API",
              "Type" : "String",
              "NoEcho": "True"
         },
         "SSHKeyName": {
             "Description" : "Name of the SSH key that you will use to access the server (must be on AWS US-EAST already)",
-            "Type" : "String"
+            "Type" : "String",
+            "Default": "NEO4J"
         }
     },
     "Resources": {
@@ -94,9 +95,9 @@
         }
     },
     "Outputs": {
-        "WebsiteURL" : {
+        "Neo4jEndPoint" : {
             "Value" : { "Fn::Join" : ["", ["http://", { "Fn::GetAtt" : [ "Server", "PublicIp" ]}, ":7474/db/data"]] },
-            "Description" : "Neo4j Endpoint"
+            "Description" : "This is the address of your Neo4j server, that your application will use."
           },
         "Note" :{
             "Value" : "Your stack is probably still building.  It takes time to get Java built.  Coffee?",
