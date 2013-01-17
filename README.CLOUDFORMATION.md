@@ -36,7 +36,7 @@ Usage
 
 * Log onto [the AWS CloudFormation console](https://console.aws.amazon.com/cloudformation/home?region=us-east-1) with your AWS account.
 * Click _Create New Stack_
-* Fill in the _Stack Name_ field
+* Fill in the _Stack Name_ field (whatever name you'd like)
 * Click the _Provide a template URL_ radio button
 * Paste [this link](https://cloudformation.neo4j.org.s3.amazonaws.com/cf_template.json) into the field next to the button
 * Click the Continue button
