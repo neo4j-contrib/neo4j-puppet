@@ -30,7 +30,7 @@ Advanced Usage
 
 * Aquire a fresh Ubuntu machine (virtual, cloud or bare metal)
 
-*Run a shell on it, and apply the commands below (you can paste them directly in)
+* Run a shell on it, and apply the commands below (you can paste them directly in)
 
 `wget https://raw.github.com/neo4j-contrib/neo4j-puppet/master/go`
 
