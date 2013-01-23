@@ -41,7 +41,12 @@ Usage
 * Click the _Provide a template URL_ radio button
 * Paste [this link](https://cloudformation.neo4j.org.s3.amazonaws.com/cf_template.json) into the field next to the button
 * Click the _Continue_ button
-* Fill in the 4 parameters.  The _SSHKeyName_ parameter is the name of your EC2 Key pair (we suggested NEO4J).  The Oracle license is the license to use Java
+* Fill in the 5 parameters.
+    * The _SSHKeyName_ parameter is the name of your EC2 Key pair (we suggested NEO4J)
+    * The Oracle license is the license to use Java
+    * Leave the AWSAvailabilityZone to the default value if you're not sure which value to use
+    * Choose a username
+    * And a password - you'll use these to connect to your Neo4j instance.
 * Click _Continue_ button
 * You can optionally add tags to help identify your stacks.  Click _Continue_ button.
 * You may review your options here.  Click _Continue_ button.
