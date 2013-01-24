@@ -26,7 +26,7 @@
             "Description": "Name of the AWS availability zone that you will deploy into",
             "Type": "String",
             "AllowedValues": ["us-east-1a", "us-east-1b", "us-east-1c", "us-east-1d"],
-            "Default": "us-east-1d  "
+            "Default": "us-east-1d"
         }
     },
     "Resources": {
