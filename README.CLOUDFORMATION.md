@@ -74,5 +74,5 @@ Using the EC2 SSH key that you kept earlier, you can SSH onto the machine:
 
 `ssh -i NEO4J.pem ubuntu@<the IP address from the output>`
 
-The Puppet tool under the hood will log to *var/tmp/puppet.log*
+The Puppet tool under the hood will log to */var/tmp/puppet.log*
 
