@@ -77,6 +77,7 @@ Troubleshooting
 * Sometimes, something will happen that we cannot predict.  We'd appreciate your help here; a [GitHub issue](https://github.com/neo4j-contrib/neo4j-puppet/issues) or email to the Mailing List with some [smart questions](http://www.catb.org/esr/faqs/smart-questions.html#uselists) or observations.
 
 *How to see detail:*
+
 Using the EC2 SSH key that you kept earlier, you can SSH onto the machine:
 
 `ssh -i NEO4J.pem ubuntu@<the IP address from the output> tail -1000 /var/tmp/puppet.log`
