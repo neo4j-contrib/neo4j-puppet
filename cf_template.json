@@ -104,6 +104,10 @@
             "Value" : { "Fn::Join" : ["", ["http://", { "Fn::GetAtt" : [ "Server", "PublicIp" ]}, ":7474/db/data"]] },
             "Description" : "This is the address of your Neo4j server, that your application will use."
           },
+        "SshAccess": {
+            "Value" : {"Fn::Join" : ["", ["ssh -i ", {"Ref": "SSHKeyName"}, ".pem -l ubuntu ", { "Fn::GetAtt" : [ "Server", "PublicIp" ]}]]},
+            "Description" : "This is how you gain remote access to the machine."
+        },
         "Note" :{
             "Value" : "Your stack is probably still building.  It takes 5-10 minutes to get Neo4j and dependencies built.  Coffee time?",
             "Description" : "Setting user expectations on timing."
