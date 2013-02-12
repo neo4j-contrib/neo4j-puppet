@@ -70,9 +70,16 @@ If you're done using your Neo4j installation, you can delete the stack from the 
 Troubleshooting
 ---------------
 
+*Why might this go wrong?*
+
+* Resources are sometimes not available at Amazon.  That's just part of our brave new cloudy world.  We'll add different availability zones in time.
+* Getting the Oracle JVM onto Ubuntu is fiddly.  We want you to get recent releases of the JDK, and we want to respect Oracle's licenses.  So we use a tool called [OAB](https://github.com/flexiondotorg/oab-java6) to get the Oracle JDK onto the machine.  Sometimes it may break, and you'll need to have a look at the Puppet log file to see what is going on. You can also elect to use the OpenJDK from Ubuntu (though we presently don't certify Neo4j on that JVM).
+* Sometimes, something will happen that we cannot predict.  We'd appreciate your help here; a [GitHub issue](https://github.com/neo4j-contrib/neo4j-puppet/issues) or email to the Mailing List with some [smart questions](http://www.catb.org/esr/faqs/smart-questions.html#uselists) or observations.
+
+*How to see detail:*
 Using the EC2 SSH key that you kept earlier, you can SSH onto the machine:
 
-`ssh -i NEO4J.pem ubuntu@<the IP address from the output>`
+`ssh -i NEO4J.pem ubuntu@<the IP address from the output> tail -1000 /var/tmp/puppet.log`
 
 The Puppet tool under the hood will log to */var/tmp/puppet.log*
 
