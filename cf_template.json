@@ -100,6 +100,10 @@
         }
     },
     "Outputs": {
+        "Neo4jWebadmin" : {
+            "Value" : { "Fn::Join" : ["", ["http://", { "Fn::GetAtt" : [ "Server", "PublicIp" ]}, ":7474"]] },
+            "Description" : "This is the address of your Neo4j server web administration console."
+          },
         "Neo4jEndPoint" : {
             "Value" : { "Fn::Join" : ["", ["http://", { "Fn::GetAtt" : [ "Server", "PublicIp" ]}, ":7474/db/data"]] },
             "Description" : "This is the address of your Neo4j server, that your application will use."
