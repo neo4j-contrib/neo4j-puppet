@@ -33,7 +33,7 @@ class neo4j::java {
         command => '/usr/bin/apt-get update';
 
       'download OAB':
-        command => '/usr/bin/wget https://github.com/flexiondotorg/oab-java6/raw/0.2.7/oab-java.sh -O /tmp/oab-java.sh',
+        command => '/usr/bin/wget https://raw.github.com/flexiondotorg/oab-java6/master/oab-java.sh -O /tmp/oab-java.sh',
         creates => '/tmp/oab-java.sh';
 
       'install OAB repo':
