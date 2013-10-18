@@ -43,7 +43,7 @@
             "Properties": {
                 "AvailabilityZone": {"Ref": "AwsAvailabilityZone"},
                 "DisableApiTermination": "FALSE",
-                "ImageId": "ami-d726abbe",
+                "ImageId": "ami-e7beec8e",
                 "InstanceType": "m1.large",
                 "KeyName": {"Ref": "SSHKeyName"},
                 "Monitoring": "false",
