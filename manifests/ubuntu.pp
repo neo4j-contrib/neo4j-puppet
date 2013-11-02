@@ -50,12 +50,12 @@ class neo4j::ubuntu {
     'bump the minimum heap size':
       command     => '/bin/echo "wrapper.java.initmemory=1024" >> /etc/neo4j/neo4j-wrapper.conf',
       require     => Package['neo4j'],
-      unless      => '/bin/grep -q "^wrapper.java.initmemory"';
+      unless      => '/bin/grep "^wrapper.java.initmemory" /etc/neo4j/neo4j-wrapper.conf 2>/dev/null';
 
     'bump the maximum heap size':
       command     => '/bin/echo "wrapper.java.maxmemory=4096" >> /etc/neo4j/neo4j-wrapper.conf',
       require     => Package['neo4j'],
-      unless      => '/bin/grep -q "^wrapper.java.maxmemory"';
+      unless      => '/bin/grep "^wrapper.java.maxmemory" /etc/neo4j/neo4j-wrapper.conf 2>/dev/null';
   }
 
   file {
