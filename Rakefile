@@ -4,5 +4,5 @@ task :default do
 end
 
 task :template do
-  sh "s3cmd put --acl-public templates/neo4j-server.properties.erb s3://cloudformation.neo4j.org"
+  sh "s3cmd put --acl-public templates/neo4j-server.properties.erb s3://cf-templates.neo4j.org"
 end

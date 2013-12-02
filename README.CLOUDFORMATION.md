@@ -39,7 +39,7 @@ Usage
 * Click _Create New Stack_
 * Fill in the _Stack Name_ field (whatever name you'd like)
 * Click the _Provide a template URL_ radio button
-* Paste [this link](https://cloudformation.neo4j.org.s3.amazonaws.com/cf_template.json) into the field next to the button
+* Paste [this link](https://cf-templates.neo4j.org.s3.amazonaws.com/cf_template.json) into the field next to the button
 * Click the _Continue_ button
 * Fill in the 5 parameters.
     * The _SSHKeyName_ parameter is the name of your EC2 Key pair (we suggested NEO4J)
